@@ -10,17 +10,23 @@
 html,body{overflow-x:hidden;width:100%}
 body{background:#fdfbf7;color:#1a1a1a}
 .topbar{background:#111;color:#fff;text-align:center;padding:8px 10px;font-size:12px;line-height:1.5}
-header{background:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:20;box-shadow:0 2px 15px rgba(0,0,0,.06);flex-wrap:wrap}
-.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;letter-spacing:2px;cursor:pointer;white-space:nowrap}
+
+/* ===== 4. ASTORE JAISA SEARCH BAR ===== */
+header{background:#f7f5f0;padding:10px 12px 12px;position:sticky;top:0;z-index:20;box-shadow:0 2px 15px rgba(0,0,0,.06)}
+.astore-bar{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:999px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.bar-left,.bar-right{display:flex;align-items:center;gap:12px}
+.icon-btn{width:38px;height:38px;border-radius:50%;background:transparent;border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;letter-spacing:1px;cursor:pointer;white-space:nowrap;line-height:1}
 .logo i{color:#b88a2a;font-style:normal}
-.search{flex:1;min-width:140px;max-width:450px;display:flex;background:#f3f3f3;border-radius:30px;overflow:hidden}
-.search input{flex:1;min-width:0;border:none;background:transparent;padding:12px 14px;outline:none;font-size:14px}
-.search button{border:none;background:#111;color:#fff;padding:0 16px;cursor:pointer;white-space:nowrap}
-.header-right{display:flex;align-items:center;gap:10px}
-.wishBtn{width:40px;height:40px;border-radius:50%;background:#f3f3f3;border:none;font-size:18px;cursor:pointer;flex-shrink:0}
-.nav{display:flex;gap:16px;font-weight:600;font-size:14px}
+.logo .dot{color:#22c55e;font-size:30px;line-height:0}
+.search-pill{margin-top:10px;background:#fff;border-radius:999px;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.search-pill span{font-size:18px;color:#888}
+.search-pill input{flex:1;min-width:0;border:none;outline:none;font-size:14px;background:transparent;padding:10px 0}
+.search-pill button{border:none;background:#111;color:#fff;padding:10px 18px;border-radius:999px;cursor:pointer;font-weight:700;white-space:nowrap}
+.nav{display:flex;gap:16px;font-weight:600;font-size:14px;justify-content:center;padding-top:10px}
 .nav span{cursor:pointer;white-space:nowrap}
-.cartBtn{background:#111;color:#fff;border:none;padding:11px 16px;border-radius:30px;cursor:pointer;font-weight:700;white-space:nowrap}
+.cartBadge{position:absolute;top:-2px;right:-2px;background:#111;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
 .hero{margin:16px 16px;background:linear-gradient(90deg,#1a1a1a 55%,#b88a2a 55%);border-radius:20px;color:#fff;display:flex;overflow:hidden;min-height:340px}
 .hero-left{flex:1.2;padding:32px 26px}
 .hero-left small{background:#b88a2a;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700}
@@ -29,13 +35,9 @@ header{background:#fff;padding:12px 16px;display:flex;align-items:center;justify
 .hero-left button{margin-top:20px;background:#fff;color:#111;border:none;padding:13px 22px;border-radius:30px;font-weight:700;cursor:pointer;margin-right:8px;margin-bottom:8px}
 .hero-left button.outline{background:transparent;color:#fff;border:1px solid #fff}
 .hero-right{flex:1;background:url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900') center/cover;min-height:220px}
-.trust{display:flex;justify-content:space-between;gap:10px;margin:16px;padding:0;flex-wrap:wrap}
-.trust div{background:#fff;padding:14px 12px;border-radius:12px;flex:1;min-width:140px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.04);font-size:13px}
-.trust b{display:block}
 .wrap{padding:10px 16px 40px;max-width:1200px;margin:auto;width:100%}
 .wrap h2{font-family:'Playfair Display',serif;font-size:28px;line-height:1.2}
 .wrap p{word-break:break-word}
-/* Astore Style - Our New Arrivals */
 .arrivals-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
 .arrivals-head h2{font-size:26px}
 .viewAll{color:#b88a2a;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}
@@ -68,29 +70,38 @@ header{background:#fff;padding:12px 16px;display:flex;align-items:center;justify
 .detail{display:flex;gap:24px;background:#fff;padding:20px;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,.05);width:100%;overflow:hidden}
 .gallery{flex:1;min-width:0}
 .main-img{width:100%;height:460px;object-fit:cover;border-radius:16px}
+/* ===== 5. 1/5 PANEL ===== */
+.gallery-nav{display:flex;align-items:center;justify-content:space-between;background:#f5f5f5;border-radius:999px;padding:6px 8px;margin-top:12px}
+.gallery-nav button{width:36px;height:36px;border-radius:50%;border:none;background:#fff;cursor:pointer;font-size:18px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.gallery-nav b{font-size:14px}
 .thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
 .thumbs img{width:76px;height:76px;object-fit:cover;border-radius:12px;cursor:pointer;border:2px solid transparent;opacity:.7;flex-shrink:0}
-.thumbs img.active{border-color:#b88a2a;opacity:1}
+.thumbs img.active{border-color:#111;opacity:1}
+/* ===== 3. 5 PHOTOS FIX ===== */
+.photos-hint{margin-top:12px;font-size:13px;color:#666;background:#f8f8f8;padding:10px 12px;border-radius:10px;line-height:1.5;white-space:normal!important;word-wrap:break-word;text-align:left}
 .info{flex:1;min-width:0}
 .info h1{font-family:'Playfair Display',serif;font-size:30px;line-height:1.2;word-break:break-word}
-.info .stars{font-size:14px;margin:10px 0}
-.info .price{font-size:26px}
-.info .price s{font-size:17px}
-.save{background:#e8f5e9;color:#2e7d32;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-left:8px;white-space:nowrap;display:inline-block;margin-top:6px}
+.info .stars{font-size:14px;margin:10px 0;color:#111}
+.info .stars span{color:#f5a623}
+.info .price{font-size:26px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.info .price s{font-size:17px;color:#999}
+.save{background:#e8f5e9;color:#2e7d32;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;display:inline-block}
 .desc{color:#666;line-height:1.7;margin:15px 0;font-size:15px;word-break:break-word}
-.opt-label{font-weight:700;margin:15px 0 8px}
-.colors{display:flex;gap:10px;flex-wrap:wrap}
-.color{width:38px;height:38px;border-radius:50%;cursor:pointer;border:3px solid transparent;flex-shrink:0}
-.color.active{border-color:#111}
-.qty-box{display:inline-flex;align-items:center;border:1px solid #ddd;border-radius:30px;overflow:hidden}
-.qty-box button{padding:12px 18px;border:none;background:#f5f5f5;cursor:pointer;font-size:18px}
-.qty-box span{padding:0 18px;font-weight:700}
+.opt-label{font-weight:700;margin:18px 0 8px}
+/* ===== 5. COLOR PILLS ===== */
+.colors{display:flex;gap:8px;flex-wrap:wrap}
+.color-pill{padding:9px 18px;border:1px solid #ddd;background:#fff;border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;text-transform:lowercase}
+.color-pill.active{background:#111;color:#fff;border-color:#111}
+.qty-box{display:inline-flex;align-items:center;border:1px solid #ddd;border-radius:999px;overflow:hidden}
+.qty-box button{padding:12px 18px;border:none;background:#fff;cursor:pointer;font-size:18px}
+.qty-box span{padding:0 18px;font-weight:700;min-width:40px;text-align:center}
 .stock{color:green;font-weight:700;font-size:14px;margin-top:10px}
 .buy-row{display:flex;gap:10px;margin-top:20px}
-.buy-row button{flex:1;padding:14px 8px;border:none;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px}
-.btn-add{background:#111;color:#fff}
-.btn-buy{background:#b88a2a;color:#fff}
-.btn-wa{background:#25D366;color:#fff;width:100%;padding:13px;border:none;border-radius:12px;font-weight:700;cursor:pointer;margin-top:12px}
+/* ===== 5. ADD TO CART WHITE / BUY NOW BLACK ===== */
+.buy-row button{flex:1;padding:15px 8px;border-radius:999px;font-weight:800;cursor:pointer;font-size:15px}
+.btn-add{background:#fff!important;color:#111!important;border:1.5px solid #111!important}
+.btn-buy{background:#111!important;color:#fff!important;border:1.5px solid #111!important}
+.btn-wa{background:#fff;color:#111;width:100%;padding:13px;border:1.5px solid #ddd;border-radius:999px;font-weight:700;cursor:pointer;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px}
 .features{margin-top:20px;background:#fdfbf7;padding:15px;border-radius:12px;font-size:14px;line-height:2}
 .related{margin-top:35px}
 .related h2{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:15px}
@@ -110,22 +121,28 @@ input,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border
 .pay.active{border:2px solid #111;background:#fff8e6}
 .bigBtn{width:100%;background:#b88a2a;color:#fff;border:none;padding:15px;border-radius:12px;font-size:17px;font-weight:800;cursor:pointer}
 .waBtn{width:100%;background:#25D366;color:#fff;border:none;padding:13px;border-radius:12px;font-weight:700;cursor:pointer;margin-top:10px}
-.waFloat{position:fixed;bottom:20px;right:18px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;border:none;font-size:26px;cursor:pointer;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+/* ===== 2. ASLI WHATSAPP ICON ===== */
+.waFloat{position:fixed;bottom:20px;right:18px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center}
+.waFloat svg{width:32px;height:32px;fill:#fff}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}.hero{flex-direction:column;margin:12px}.hero-right{height:220px}.reviews-grid{grid-template-columns:1fr}footer{grid-template-columns:1fr}.nav{display:none}.hero-left{padding:24px 18px}.hero-left h1{font-size:32px}.detail{flex-direction:column;padding:16px}.main-img{height:320px}.card img{height:180px}.card-body{padding:10px}.info h1{font-size:26px}.arrivals-head h2{font-size:22px}.wrap{padding:10px 12px 30px}.reviews{margin:0 12px 24px}}
-@media(max-width:480px){header{padding:10px 12px}.logo{font-size:24px}.search{order:3;width:100%;max-width:none}.cartBtn{padding:9px 12px;font-size:13px}.grid{gap:10px}.card img{height:165px}.card-body h3{font-size:14px}.price{font-size:16px}.add,.buy{font-size:12px;padding:10px 4px}.trust div{min-width:45%}}
+@media(max-width:480px){.logo{font-size:22px}.grid{gap:10px}.card img{height:165px}.card-body h3{font-size:14px}.price{font-size:16px}.add,.buy{font-size:12px;padding:10px 4px}}
 </style>
 </head>
 <body>
 <div class="topbar">✨ FREE DELIVERY ON ORDERS OVER Rs. 3,000 | CASH ON DELIVERY AVAILABLE ALL OVER PAKISTAN ✨</div>
 <header>
-<div class="logo" onclick="goHome()">BOGANZA<i>.</i></div>
-<div class="search"><input id="searchInput" placeholder="Search for bags..." oninput="render()"><button onclick="render()">Search</button></div>
-<div class="header-right"><button class="wishBtn" onclick="alert('Wishlist me koi item nahi hai')">♡</button><button class="cartBtn" onclick="toggleCart(true)">🛒 Cart (<span id="cartCount">0</span>)</button></div>
-<div class="nav"><span onclick="goHome()">Home</span><span onclick="goHome()">All Bags</span><span onclick="filterCat('Handbag')">Handbags</span><span onclick="filterCat('Tote')">Totes</span></div>
+  <div class="astore-bar">
+    <div class="bar-left"><button class="icon-btn" onclick="goHome()">☰</button><button class="icon-btn" onclick="document.getElementById('searchInput').focus()">🔍</button></div>
+    <div class="logo" onclick="goHome()">BOGANZA<i>.</i><span class="dot">.</span></div>
+    <div class="bar-right"><button class="icon-btn" onclick="alert('Login jald aa raha hai')">👤</button><button class="icon-btn" style="position:relative" onclick="toggleCart(true)">🛍️<span class="cartBadge" id="cartCount">0</span></button></div>
+  </div>
+  <div class="search-pill"><span>🔍</span><input id="searchInput" placeholder="Search for bags..." oninput="render()"><button onclick="render()">Search</button></div>
+  <div class="nav"><span onclick="goHome()">Home</span><span onclick="goHome()">All Bags</span><span onclick="filterCat('Handbag')">Handbags</span><span onclick="filterCat('Tote')">Totes</span></div>
 </header>
+
 <div id="mainPage">
 <div class="hero"><div class="hero-left"><small>NEW COLLECTION 2026</small><h1>Carry Elegance.<br>Own Every Moment.</h1><p>Premium handbags crafted for Pakistani women. Elegant, durable & affordable. Trusted by 5000+ happy customers.</p><button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop All Bags →</button><button class="outline" onclick="filterCat('Sale')">Shop Sale - Up to 30% Off</button><p style="margin-top:18px;font-size:13px">⭐ 4.9/5 Rating &nbsp; | &nbsp; 🚚 Fast Delivery &nbsp; | &nbsp; ↩ 7-Day Exchange</p></div><div class="hero-right"></div></div>
-<div class="trust"><div>🚚 <b>Fast Delivery</b>2-3 Days All Pakistan</div><div>💵 <b>Cash on Delivery</b>Pay At Your Door</div><div>🛡️ <b>Quality Checked</b>Premium Material</div><div>↩ <b>Easy Exchange</b>7 Days Return</div></div>
+<!-- 1. 4 BOXES DELETE KAR DIYE -->
 <div class="wrap" id="shop">
 <div class="arrivals-head"><h2>Our New Arrivals</h2><span class="viewAll" onclick="filterCat('All',null)">View All →</span></div>
 <p style="color:#666;margin-top:5px">Bag pe click karo, andar detail khulegi</p>
@@ -134,20 +151,27 @@ input,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border
 </div>
 <div class="reviews"><h2>What Our Customers Say ❤️</h2><div class="reviews-grid"><div>⭐⭐⭐⭐⭐<br><b>Ayesha K. - Lahore</b><br>"Bag quality is amazing, bilkul picture jaisa aaya. Delivery bhi fast thi."</div><div>⭐⭐⭐⭐⭐<br><b>Mahnoor S. - Karachi</b><br>"I ordered tote bag, boht premium lagta hai. Highly recommended!"</div><div>⭐⭐⭐⭐⭐<br><b>Fatima R. - Islamabad</b><br>"Second time order kiya hai. BOGANZA is now my favourite brand."</div></div></div>
 </div>
+
 <div id="productPage">
 <div class="breadcrumb"><span onclick="goHome()" style="cursor:pointer">Home</span> / <span onclick="goHome()" style="cursor:pointer">All Bags</span> / <b id="crumbName"></b></div>
 <button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;margin-bottom:15px">← Back to All Bags</button>
-<div class="detail"><div class="gallery"><img id="mainImg" class="main-img"><div class="thumbs" id="thumbs"></div><p style="margin-top:12px;font-size:13px;color:#888">📸 5 Photos - Kisi bhi choti photo pe click karo, bari photo change hogi</p></div><div class="info"><span class="badge" id="pBadge">BEST SELLER</span><h1 id="pName"></h1><div class="stars">★★★★★ 4.9 (212 reviews) | 500+ Sold</div><div class="price"><span id="pPrice"></span> <s id="pOld"></s> <span class="save" id="pSave"></span></div><p class="desc" id="pDesc"></p><div class="opt-label">Color: <span id="colorName">Black</span></div><div class="colors" id="colorBox"></div><div class="opt-label">Quantity:</div><div class="qty-box"><button onclick="changeDetailQty(-1)">-</button><span id="detailQty">1</span><button onclick="changeDetailQty(1)">+</button></div><p class="stock">● In Stock - Ready to Ship</p><div class="buy-row"><button class="btn-add" onclick="addFromDetail()">Add to Cart</button><button class="btn-buy" onclick="buyNow()">Buy Now →</button></div><button class="btn-wa" onclick="orderWhatsAppSingle()">Order on WhatsApp 📱</button><div class="features"><b>Why You'll Love It:</b><br> ✔ Premium Imported Material<br> ✔ Strong Zips & Stitching<br> ✔ Free Delivery Over Rs. 3000<br> ✔ Cash on Delivery Available<br> ✔ 7-Day Easy Exchange</div></div></div>
+<div class="detail"><div class="gallery"><img id="mainImg" class="main-img">
+<div class="gallery-nav"><button onclick="prevImg()">‹</button><b id="photoCounter">1 / 5</b><button onclick="nextImg()">›</button></div>
+<div class="thumbs" id="thumbs"></div><p class="photos-hint">📸 <b>5 Photos</b> - Kisi bhi choti photo pe click karo, bari photo badal jayegi</p></div>
+<div class="info"><span class="badge" id="pBadge">BEST SELLER</span><h1 id="pName"></h1><div class="stars"><span>★★★★★</span> 5.0 (104 reviews) | 500+ Sold</div><div class="price"><span id="pPrice"></span> <s id="pOld"></s> <span class="save" id="pSave"></span></div><p class="desc" id="pDesc"></p><div class="opt-label">Color: <span id="colorName">Black</span></div><div class="colors" id="colorBox"></div><div class="opt-label">Quantity:</div><div class="qty-box"><button onclick="changeDetailQty(-1)">-</button><span id="detailQty">1</span><button onclick="changeDetailQty(1)">+</button></div><p class="stock">● In Stock - Ready to Ship</p><div class="buy-row"><button class="btn-add" onclick="addFromDetail()">Add to cart</button><button class="btn-buy" onclick="buyNow()">Buy it now</button></div><button class="btn-wa" onclick="orderWhatsAppSingle()">Order on WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button><div class="features"><b>Why You'll Love It:</b><br> ✔ Premium Imported Material<br> ✔ Strong Zips & Stitching<br> ✔ Free Delivery Over Rs. 3000<br> ✔ Cash on Delivery Available<br> ✔ 7-Day Easy Exchange</div></div></div>
 <div class="related"><h2>You May Also Like ❤️</h2><p style="color:#666;margin-bottom:15px">Customers ne ye bhi pasand kiye</p><div class="grid" id="relatedGrid"></div></div>
 <div style="background:#fff;padding:20px;border-radius:16px;margin-top:25px"><h3>Customer Reviews</h3><p style="margin-top:12px;line-height:1.8;font-size:14px">⭐⭐⭐⭐⭐ <b>Ayesha - Lahore</b><br>"Boht pyara bag hai, quality 10/10, picture se bhi zyada acha laga."<br><br>⭐⭐⭐⭐⭐ <b>Sana - Karachi</b><br>"Delivery 2 din me aa gayi, packing bhi premium thi."</p></div>
 </div>
+
 <footer><div><h2 style="font-family:'Playfair Display',serif">BOGANZA.</h2><p style="color:#ccc;margin-top:10px;line-height:1.6">Premium bags for modern Pakistani women. Elegance in every stitch.</p><p style="margin-top:12px">📱 WhatsApp: 03350854912<br>📧 hello@boganza.pk</p></div><div><b>Quick Links</b><a onclick="goHome()">Home</a><a onclick="filterCat('All',null)">All Bags</a><a onclick="trackOrder()">Track Order</a><a onclick="showPolicy()">Exchange Policy</a></div><div><b>Categories</b><a onclick="filterCat('Tote',null)">Tote Bags</a><a onclick="filterCat('Crossbody',null)">Crossbody</a><a onclick="filterCat('Handbag',null)">Handbags</a><a onclick="filterCat('Clutch',null)">Clutches</a></div></footer>
+
 <div id="trackPage" style="display:none;padding:30px 16px;max-width:600px;margin:auto;text-align:center"><button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;float:left">← Back</button><br><br><h1 style="font-size:50px">📦</h1><h2 style="font-family:'Playfair Display',serif;font-size:30px">Track Your Order</h2><p style="color:#666;margin:10px 0">Apna Order ID likhen jo aapko order ke baad mila tha</p><input id="trackInput" placeholder="Misal: BG-1985" style="text-align:center;font-size:18px;font-weight:700;text-transform:uppercase"><button class="bigBtn" onclick="doTrack()">Track Order →</button><div id="trackResult" style="margin-top:20px"></div><p style="margin-top:15px;font-size:13px;color:#888">Order ID nahi mil raha? WhatsApp karein: <b>03350854912</b></p></div>
 <div id="policyPage" style="display:none;padding:30px 16px;max-width:700px;margin:auto"><button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer">← Back to Shop</button><h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-top:15px">↩ Exchange & Return Policy</h2><p style="color:#666;margin:8px 0">Hum chahte hain aap apni shopping se 100% khush hon.</p><div style="background:#fff;padding:20px;border-radius:16px;margin-top:15px;line-height:2"><b>✔ 7-Day Easy Exchange</b><br>Delivery ke 7 din ke andar aap bag exchange kar sakte hain.<br><br><b>✔ Shart Kya Hai?</b><br>1. Bag bilkul naya ho, use na hua ho<br>2. Tag aur packing saath ho<br>3. Bag ko koi nuksan na pahuncha ho<br><br><b>✔ Exchange Kaise Hoga?</b><br>1. WhatsApp pe humein message karein: <b>03350854912</b><br>2. Apna Order ID aur bag ki photo bhejein<br>3. Hum aapko naya bag bhej denge<br><br><b>✔ Delivery Charges</b><br>Exchange ke liye delivery charges customer dega.<br><br><b>✔ Kya Return Hota Hai?</b><br>Agar bag me koi manufacturing fault ho to full return / refund hoga.</div><button class="bigBtn" style="margin-top:15px" onclick="window.open('https://wa.me/923350854912?text=Hello BOGANZA! Mujhe Exchange karna hai','_blank')">Exchange Ke Liye WhatsApp Karein 📱</button></div>
 <div id="drawer"><span style="float:right;cursor:pointer;font-size:22px" onclick="toggleCart(false)">✕</span><h2>Your Cart</h2><div id="cartItems"></div><h3 id="cartTotal" style="margin-top:15px"></h3><button class="bigBtn" onclick="openCheckout()">Proceed to Checkout →</button></div>
 <div id="checkoutPage"><h2>Checkout</h2><h3 style="margin-top:15px">1. Delivery Details</h3><input id="cName" placeholder="Full Name *"><input id="cPhone" placeholder="Phone / WhatsApp Number *"><input id="cCity" placeholder="City *"><textarea id="cAddress" placeholder="Complete Address *"></textarea><h3>2. Payment Method</h3><div class="pay active" onclick="selectPay(this,'Cash on Delivery')"><span>💵 <b>Cash on Delivery</b></span><span>✓</span></div><div class="pay" onclick="selectPay(this,'JazzCash')"><span>📱 <b>JazzCash</b> - 03350854912</span><span>→</span></div><div class="pay" onclick="selectPay(this,'EasyPaisa')"><span>📱 <b>EasyPaisa</b> - 03350854912</span><span>→</span></div><div class="pay" onclick="selectPay(this,'Bank Transfer')"><span>🏦 <b>Bank Transfer</b></span><span>→</span></div><h3>Order Summary</h3><div id="summary"></div><button class="bigBtn" onclick="placeOrder()">Place Order - Confirm ✅</button><button class="waBtn" onclick="orderWhatsApp()">Order on WhatsApp 📱</button><button onclick="backShop()" style="width:100%;margin-top:10px;padding:12px;border:none;background:#eee;border-radius:12px;cursor:pointer">← Back to Shop</button></div>
 <div id="successPage" style="text-align:center;padding:40px 16px"><h1 style="font-size:50px">🎉</h1><h2>Thank You! Order Placed</h2><p id="orderInfo" style="margin:15px;line-height:1.8"></p><button class="bigBtn" onclick="location.reload()">Continue Shopping</button></div>
-<button class="waFloat" onclick="window.open('https://wa.me/923350854912?text=Hello BOGANZA!','_blank')">💬</button>
+<button class="waFloat" onclick="window.open('https://wa.me/923350854912?text=Hello BOGANZA!','_blank')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+
 <script>
 let products=[
 {name:"The Everyday Tote",cat:"Tote",price:3499,old:4999,desc:"Spacious daily tote with premium leather finish. Fits laptop, wallet & makeup. Perfect for office & university. Soft interior, strong handles, premium zip.",colors:["Black","Brown","Beige","Maroon"],imgs:["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800"]},
@@ -160,16 +184,19 @@ let products=[
 {name:"Travel Duffel",cat:"Tote",price:4999,old:6499,desc:"Large travel bag, cabin size. Durable zips, spacious, best for travel & gym.",colors:["Black","Navy","Grey"],imgs:["https://images.unsplash.com/photo-1546938576-6e6a4b317be2?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
 ];
 try{let sp=JSON.parse(localStorage.getItem('boganza_products')||"null"); if(sp && sp.length>0){products=sp;}}catch(e){}
-let curCat='All', cart=[], payment='Cash on Delivery', total=0, currentProduct=0, detailQty=1, selectedColor='Black';
+let curCat='All', cart=[], payment='Cash on Delivery', total=0, currentProduct=0, detailQty=1, selectedColor='Black', currentImgIdx=0;
 const colorMap={Black:'#111',Brown:'#8B4513',Beige:'#E8DCC6',Maroon:'#800000',Pink:'#FFC0CB',White:'#fff',Golden:'#D4AF37',Grey:'#888',Silver:'#C0C0C0',Navy:'#000080'};
 const SHOP_WHATSAPP='923350854912';
 function goHome(){document.getElementById('productPage').style.display='none'; document.getElementById('checkoutPage').style.display='none'; document.getElementById('successPage').style.display='none'; document.getElementById('trackPage').style.display='none'; document.getElementById('policyPage').style.display='none'; document.getElementById('mainPage').style.display='block'; window.scrollTo(0,0);}
 function filterCat(c,btn){curCat=c; document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active')); if(btn)btn.classList.add('active'); goHome(); render(); document.getElementById('shop').scrollIntoView({behavior:'smooth'});}
 function toggleHeart(el,event){event.stopPropagation(); el.classList.toggle('active'); el.innerText=el.classList.contains('active')?'❤️':'♡';}
 function render(){ let q=(document.getElementById('searchInput')?.value||'').toLowerCase(); let grid=document.getElementById('grid'); grid.innerHTML=''; products.forEach((p,i)=>{ if(curCat!=='All' && curCat!=='Sale' && p.cat!==curCat) return; if(curCat==='Sale' && p.price>3500) return; if(q && !p.name.toLowerCase().includes(q)) return; grid.innerHTML+=`<div class="card"><div class="card-img-wrap"><button class="heart" onclick="toggleHeart(this,event)">♡</button><img src="${p.imgs[0]}" onclick="openProduct(${i})"></div><div class="card-body"><div class="brand-label">BOGANZA.PK</div><span class="badge">-30% SALE</span><h3>${p.name}</h3><div class="stars">★★★★★ 5.0 (212)</div><div class="price">Rs. ${p.price} <s>Rs. ${p.old}</s></div><div class="card-btns"><button class="add" onclick="event.stopPropagation();addToCart(${i},1)">Add to Cart</button><button class="buy" onclick="event.stopPropagation();addToCart(${i},1);toggleCart(false);openCheckout()">Buy Now</button></div><button class="viewBtn" onclick="openProduct(${i})">View Details →</button></div></div>`; }); }
-function openProduct(i){ currentProduct=i; detailQty=1; document.getElementById('detailQty').innerText='1'; let p=products[i]; selectedColor=p.colors[0]; document.getElementById('mainPage').style.display='none'; document.getElementById('checkoutPage').style.display='none'; document.getElementById('trackPage').style.display='none'; document.getElementById('policyPage').style.display='none'; document.getElementById('productPage').style.display='block'; document.getElementById('crumbName').innerText=p.name; document.getElementById('pName').innerText=p.name; document.getElementById('pPrice').innerText='Rs. '+p.price; document.getElementById('pOld').innerText='Rs. '+p.old; document.getElementById('pSave').innerText='Save Rs. '+(p.old-p.price); document.getElementById('pDesc').innerText=p.desc; document.getElementById('colorName').innerText=selectedColor; document.getElementById('mainImg').src=p.imgs[0]; let thumbs=document.getElementById('thumbs'); thumbs.innerHTML=''; p.imgs.forEach((img,idx)=>{ thumbs.innerHTML+=`<img src="${img}" class="${idx==0?'active':''}" onclick="changeImg('${img}',this)">`; }); let cb=document.getElementById('colorBox'); cb.innerHTML=''; p.colors.forEach((c,idx)=>{ cb.innerHTML+=`<div class="color ${idx==0?'active':''}" style="background:${colorMap[c]||'#ccc'};${c=='White'?'border:1px solid #ddd':''}" onclick="selectColor('${c}',this)" title="${c}"></div>`; }); let rel=document.getElementById('relatedGrid'); rel.innerHTML=''; let others=products.map((pp,idx)=>({pp,idx})).filter(x=>x.idx!==i).sort((a,b)=> (b.pp.cat===p.cat)-(a.pp.cat===p.cat)); others.slice(0,4).forEach(x=>{ rel.innerHTML+=`<div class="card"><div class="card-img-wrap"><button class="heart" onclick="toggleHeart(this,event)">♡</button><img src="${x.pp.imgs[0]}" onclick="openProduct(${x.idx})"></div><div class="card-body"><div class="brand-label">BOGANZA.PK</div><h3>${x.pp.name}</h3><div class="stars">★★★★★ 5.0 (212)</div><div class="price">Rs. ${x.pp.price} <s>Rs. ${x.pp.old}</s></div><div class="card-btns"><button class="add" onclick="event.stopPropagation();addToCart(${x.idx},1)">Add to Cart</button><button class="buy" onclick="event.stopPropagation();addToCart(${x.idx},1);toggleCart(false);openCheckout()">Buy Now</button></div></div></div>`; }); window.scrollTo(0,0); }
-function changeImg(src,el){document.getElementById('mainImg').src=src; document.querySelectorAll('.thumbs img').forEach(x=>x.classList.remove('active')); el.classList.add('active');}
-function selectColor(c,el){selectedColor=c; document.getElementById('colorName').innerText=c; document.querySelectorAll('.color').forEach(x=>x.classList.remove('active')); el.classList.add('active');}
+function openProduct(i){ currentProduct=i; detailQty=1; currentImgIdx=0; document.getElementById('detailQty').innerText='1'; let p=products[i]; selectedColor=p.colors[0]; document.getElementById('mainPage').style.display='none'; document.getElementById('checkoutPage').style.display='none'; document.getElementById('trackPage').style.display='none'; document.getElementById('policyPage').style.display='none'; document.getElementById('productPage').style.display='block'; document.getElementById('crumbName').innerText=p.name; document.getElementById('pName').innerText=p.name; document.getElementById('pPrice').innerText='Rs. '+p.price; document.getElementById('pOld').innerText='Rs. '+p.old; document.getElementById('pSave').innerText='Sale Save Rs. '+(p.old-p.price); document.getElementById('pDesc').innerText=p.desc; document.getElementById('colorName').innerText=selectedColor; document.getElementById('mainImg').src=p.imgs[0]; document.getElementById('photoCounter').innerText='1 / '+p.imgs.length; let thumbs=document.getElementById('thumbs'); thumbs.innerHTML=''; p.imgs.forEach((img,idx)=>{ thumbs.innerHTML+=`<img src="${img}" class="${idx==0?'active':''}" onclick="changeImg('${img}',this,${idx})">`; }); let cb=document.getElementById('colorBox'); cb.innerHTML=''; p.colors.forEach((c,idx)=>{ cb.innerHTML+=`<button class="color-pill ${idx==0?'active':''}" onclick="selectColor('${c}',this)">${c.toLowerCase()}</button>`; }); let rel=document.getElementById('relatedGrid'); rel.innerHTML=''; let others=products.map((pp,idx)=>({pp,idx})).filter(x=>x.idx!==i).sort((a,b)=> (b.pp.cat===p.cat)-(a.pp.cat===p.cat)); others.slice(0,4).forEach(x=>{ rel.innerHTML+=`<div class="card"><div class="card-img-wrap"><button class="heart" onclick="toggleHeart(this,event)">♡</button><img src="${x.pp.imgs[0]}" onclick="openProduct(${x.idx})"></div><div class="card-body"><div class="brand-label">BOGANZA.PK</div><h3>${x.pp.name}</h3><div class="stars">★★★★★ 5.0 (212)</div><div class="price">Rs. ${x.pp.price} <s>Rs. ${x.pp.old}</s></div><div class="card-btns"><button class="add" onclick="event.stopPropagation();addToCart(${x.idx},1)">Add to Cart</button><button class="buy" onclick="event.stopPropagation();addToCart(${x.idx},1);toggleCart(false);openCheckout()">Buy Now</button></div></div></div>`; }); window.scrollTo(0,0); }
+function updateCounter(){let p=products[currentProduct]; document.getElementById('photoCounter').innerText=(currentImgIdx+1)+' / '+p.imgs.length;}
+function changeImg(src,el,idx){document.getElementById('mainImg').src=src; document.querySelectorAll('.thumbs img').forEach(x=>x.classList.remove('active')); el.classList.add('active'); if(idx!==undefined) currentImgIdx=idx; updateCounter();}
+function prevImg(){let p=products[currentProduct]; currentImgIdx=(currentImgIdx-1+p.imgs.length)%p.imgs.length; document.getElementById('mainImg').src=p.imgs[currentImgIdx]; document.querySelectorAll('.thumbs img').forEach((x,ix)=>x.classList.toggle('active',ix===currentImgIdx)); updateCounter();}
+function nextImg(){let p=products[currentProduct]; currentImgIdx=(currentImgIdx+1)%p.imgs.length; document.getElementById('mainImg').src=p.imgs[currentImgIdx]; document.querySelectorAll('.thumbs img').forEach((x,ix)=>x.classList.toggle('active',ix===currentImgIdx)); updateCounter();}
+function selectColor(c,el){selectedColor=c; document.getElementById('colorName').innerText=c; document.querySelectorAll('.color-pill').forEach(x=>x.classList.remove('active')); el.classList.add('active');}
 function changeDetailQty(d){detailQty+=d; if(detailQty<1)detailQty=1; if(detailQty>10)detailQty=10; document.getElementById('detailQty').innerText=detailQty;}
 function addToCart(i,qty){let f=cart.find(x=>x.i===i); if(f)f.qty+=qty; else cart.push({i,qty}); updateCart(); toggleCart(true);}
 function addFromDetail(){addToCart(currentProduct,detailQty);}
