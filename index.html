@@ -148,7 +148,7 @@ footer a{color:#ccc;text-decoration:none;display:block;margin:8px 0;font-size:14
 .bag-head{position:relative;width:44px;height:44px;border-radius:50%;background:#5a31f4;color:#fff;border:none;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .bag-head span{position:absolute;top:-4px;right:-4px;background:#111;color:#fff;font-size:11px;width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .order-summary-head{display:flex;justify-content:space-between;align-items:center;background:#f8f8f8;padding:14px;border-radius:12px;margin:16px 0;cursor:pointer;font-weight:600}
-input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border-radius:12px;outline:none;font-size:14px;background:#fff}
+input,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border-radius:12px;outline:none;font-size:14px;background:#fff}
 .pay{border:1px solid #ddd;padding:14px;border-radius:12px;margin:8px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#fff}
 .pay.active{border:2px solid #111;background:#fff8e6}
 .pay .tick{width:20px;height:20px;border-radius:50%;border:1.5px solid #111;display:flex;align-items:center;justify-content:center;font-size:12px}
@@ -165,22 +165,6 @@ input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd
 .waFloat svg{width:32px;height:32px;fill:#fff}
 #successPage{display:none;padding:24px 16px;max-width:1100px;margin:auto}
 #billingExtra{display:none}
-/* Admin Panel Styles */
-#adminPage{display:none;padding:20px 16px 50px;max-width:1100px;margin:auto}
-.admin-tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin:16px 0;border-bottom:1px solid #eee}
-.admin-tab{padding:10px 16px;border:1px solid #ddd;background:#fff;border-radius:25px;cursor:pointer;white-space:nowrap;font-weight:700;font-size:13px}
-.admin-tab.active{background:#111;color:#fff;border-color:#111}
-.admin-sec{display:none;background:#fff;padding:20px;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.05)}
-.admin-sec.active{display:block}
-.admin-sec h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:14px}
-.admin-label{font-size:13px;font-weight:700;display:block;margin-top:10px;color:#333}
-.gallery-preview{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
-.gallery-preview-item{position:relative;width:74px;height:74px}
-.gallery-preview-item img{width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid #ddd}
-.gallery-preview-item button{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#111;color:#fff;border:none;font-size:11px;cursor:pointer}
-.admin-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;border:1px solid #eee;border-radius:12px;margin-top:10px}
-.admin-item img{width:56px;height:56px;object-fit:cover;border-radius:8px;flex-shrink:0}
-.admin-order-card{border:1px solid #eee;border-radius:12px;padding:14px;margin-top:12px;line-height:1.7;font-size:14px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}.hero{flex-direction:column;margin:12px}.hero-right{height:220px}.reviews-grid{grid-template-columns:1fr}footer{grid-template-columns:1fr}.nav{display:none}.hero-left{padding:24px 18px}.hero-left h1{font-size:32px}.detail{flex-direction:column;padding:16px}.main-img{height:320px}.card img{height:180px}.card-body{padding:10px}.info h1{font-size:26px}.arrivals-head h2{font-size:22px}.wrap{padding:10px 12px 30px}.reviews{margin:0 12px 24px}}
 @media(max-width:480px){.logo{font-size:22px}.grid{gap:10px}.card img{height:165px}.card-body h3{font-size:14px}.price{font-size:16px}.add,.buy{font-size:12px;padding:10px 4px}}
 </style>
@@ -203,13 +187,13 @@ input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd
 <div class="nav"><span onclick="goHome()">Home</span><span onclick="goHome()">All Bags</span><span onclick="filterCat('Handbag')">Handbags</span><span onclick="filterCat('Tote')">Totes</span></div>
 </header>
 <div id="menuOverlay" onclick="closeMenu()"></div>
-<div id="menuDrawer"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Menu</h3><span style="cursor:pointer;font-size:22px" onclick="closeMenu()">✕</span></div><div class="menu-item" onclick="closeMenu();goHome()">HOME</div><div class="menu-item" onclick="closeMenu();filterCat('All',null)">NEW ARRIVALS</div><div class="menu-item" onclick="closeMenu();filterCat('Sale',null)">DEALS</div><div class="menu-item" onclick="closeMenu();filterCat('All',null)">BAGS <span>→</span></div><div class="menu-item" onclick="closeMenu();showPolicy()">CONTACT US</div><div class="menu-item" onclick="closeMenu();showBlogs()">BLOGS</div><div class="menu-item" onclick="closeMenu();openAdminPanel()">ADMIN PANEL</div></div>
+<div id="menuDrawer"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Menu</h3><span style="cursor:pointer;font-size:22px" onclick="closeMenu()">✕</span></div><div class="menu-item" onclick="closeMenu();goHome()">HOME</div><div class="menu-item" onclick="closeMenu();filterCat('All',null)">NEW ARRIVALS</div><div class="menu-item" onclick="closeMenu();filterCat('Sale',null)">DEALS</div><div class="menu-item" onclick="closeMenu();filterCat('All',null)">BAGS <span>→</span></div><div class="menu-item" onclick="closeMenu();showPolicy()">CONTACT US</div><div class="menu-item" onclick="closeMenu();showBlogs()">BLOGS</div></div>
 <div id="profileOverlay" onclick="closeProfile()"></div>
 <div id="profilePanel"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:18px">Sign in or create account</b><span style="cursor:pointer;font-size:22px" onclick="closeProfile()">✕</span></div><button class="shop-btn" style="margin-top:16px">Sign in with shop</button><div class="or-line">OR</div><div class="email-row"><input id="profileEmail" placeholder="Email"><button onclick="closeProfile()">→</button></div><div class="profile-two"><button>📦 Orders</button><button>👤 Profile</button></div></div>
 <div id="searchOverlay" onclick="closeSearchPanel()"></div>
 <div id="searchPanel"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><b>Search</b><span style="cursor:pointer;font-size:22px" onclick="closeSearchPanel()">✕</span></div><div class="search-big"><input id="searchPanelInput" placeholder="Search" oninput="renderSearchPanel()"><span>🔍</span></div><div class="search-results" id="searchResults"></div></div>
 <div id="mainPage">
-<div class="hero" id="heroSection"><div class="hero-left"><small>NEW COLLECTION 2026</small><h1 id="heroTitleDisplay">Carry Elegance.<br>Own Every Moment.</h1><p id="heroSubtitleDisplay">Premium handbags crafted for Pakistani women. Elegant, durable & affordable. Trusted by 5000+ happy customers.</p><button id="heroBtnDisplay" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop All Bags →</button><button class="outline" onclick="filterCat('Sale')">Shop Sale - Up to 30% Off</button><p style="margin-top:18px;font-size:13px">⭐ 4.9/5 Rating &nbsp; | &nbsp; 🚚 Fast Delivery &nbsp; | &nbsp; ↩ 7-Day Exchange</p></div><div class="hero-right" id="heroImgDisplay"></div></div>
+<div class="hero"><div class="hero-left"><small>NEW COLLECTION 2026</small><h1>Carry Elegance.<br>Own Every Moment.</h1><p>Premium handbags crafted for Pakistani women. Elegant, durable & affordable. Trusted by 5000+ happy customers.</p><button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop All Bags →</button><button class="outline" onclick="filterCat('Sale')">Shop Sale - Up to 30% Off</button><p style="margin-top:18px;font-size:13px">⭐ 4.9/5 Rating &nbsp; | &nbsp; 🚚 Fast Delivery &nbsp; | &nbsp; ↩ 7-Day Exchange</p></div><div class="hero-right"></div></div>
 <div class="wrap" id="shop">
 <div class="arrivals-head"><h2>Our New Arrivals</h2><span class="viewAll" onclick="filterCat('All',null)">View All →</span></div>
 <div class="filters" id="filters"><button class="active" onclick="filterCat('All',this)">All</button><button onclick="filterCat('Tote',this)">Tote Bags</button><button onclick="filterCat('Crossbody',this)">Crossbody</button><button onclick="filterCat('Handbag',this)">Handbags</button><button onclick="filterCat('Clutch',this)">Clutch</button><button onclick="filterCat('Sale',this)">🔥 Sale</button></div>
@@ -220,11 +204,11 @@ input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd
 <div id="productPage">
 <button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;margin-bottom:15px">← Back to All Bags</button>
 <div class="detail"><div class="gallery"><img id="mainImg" class="main-img"><div class="gallery-nav"><button onclick="prevImg()">‹</button><b id="photoCounter">1 / 5</b><button onclick="nextImg()">›</button></div><div class="thumbs" id="thumbs"></div></div>
-<div class="info"><span class="badge" id="pBadge">BEST SELLER</span><div class="brand-small" id="pBrand">Boganza.pk</div><h1 id="pName"></h1><div class="stars"><span>★★★★★</span> 5.0 (104 reviews) | 500+ Sold</div><div class="price"><span id="pPrice"></span> <s id="pOld"></s> <span class="save" id="pSave"></span></div><p class="desc" id="pDesc"></p><div class="opt-label">Color: <span id="colorName">Black</span></div><div class="colors" id="colorBox"></div><div class="opt-label">Quantity:</div><div class="qty-box"><button onclick="changeDetailQty(-1)">-</button><span id="detailQty">1</span><button onclick="changeDetailQty(1)">+</button></div><p class="stock" id="pStock">● In Stock - Ready to Ship</p><div class="buy-row"><button class="btn-add" id="detailAddBtn" onclick="addFromDetail()">Add to cart</button><button class="btn-buy" id="detailBuyBtn" onclick="buyNow()">Buy it now</button></div><button class="btn-wa" onclick="orderWhatsAppSingle()">Order on WhatsApp</button></div></div>
+<div class="info"><span class="badge" id="pBadge">BEST SELLER</span><div class="brand-small">Boganza.pk</div><h1 id="pName"></h1><div class="stars"><span>★★★★★</span> 5.0 (104 reviews) | 500+ Sold</div><div class="price"><span id="pPrice"></span> <s id="pOld"></s> <span class="save" id="pSave"></span></div><p class="desc" id="pDesc"></p><div class="opt-label">Color: <span id="colorName">Black</span></div><div class="colors" id="colorBox"></div><div class="opt-label">Quantity:</div><div class="qty-box"><button onclick="changeDetailQty(-1)">-</button><span id="detailQty">1</span><button onclick="changeDetailQty(1)">+</button></div><p class="stock">● In Stock - Ready to Ship</p><div class="buy-row"><button class="btn-add" onclick="addFromDetail()">Add to cart</button><button class="btn-buy" onclick="buyNow()">Buy it now</button></div><button class="btn-wa" onclick="orderWhatsAppSingle()">Order on WhatsApp</button></div></div>
 <div class="related"><h2>You May Also Like ❤️</h2><p style="color:#666;margin-bottom:15px">Customers ne ye bhi pasand kiye</p><div class="grid" id="relatedGrid"></div></div>
 <div style="background:#fff;padding:20px;border-radius:16px;margin-top:25px"><h3>Customer Reviews</h3><p style="margin-top:12px;line-height:1.8;font-size:14px">⭐⭐⭐⭐⭐ <b>Ayesha - Lahore</b><br>"Boht pyara bag hai, quality 10/10, picture se bhi zyada acha laga."<br><br>⭐⭐⭐⭐⭐ <b>Sana - Karachi</b><br>"Delivery 2 din me aa gayi, packing bhi premium thi."</p></div>
 </div>
-<footer id="mainFooter"><div><h2 style="font-family:'Playfair Display',serif">BOGANZA.</h2><p id="footerAboutDisplay" style="color:#ccc;margin-top:10px;line-height:1.6">Premium bags for modern Pakistani women. Elegance in every stitch.</p><p id="footerContactDisplay" style="margin-top:12px;line-height:1.8">📱 WhatsApp: 03350854912<br>📧 hello@boganza.pk</p><div id="footerSocialDisplay" style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap"></div><p id="footerCopyrightDisplay" style="color:#888;font-size:12px;margin-top:12px"></p></div><div><b>Quick Links</b><a onclick="goHome()">Home</a><a onclick="filterCat('All',null)">All Bags</a><a onclick="trackOrder()">Track Order</a><a onclick="showPolicy()">Exchange Policy</a></div><div><b>Categories</b><a onclick="filterCat('Tote',null)">Tote Bags</a><a onclick="filterCat('Crossbody',null)">Crossbody</a><a onclick="filterCat('Handbag',null)">Handbags</a><a onclick="filterCat('Clutch',null)">Clutches</a></div></footer>
+<footer id="mainFooter"><div><h2 style="font-family:'Playfair Display',serif">BOGANZA.</h2><p style="color:#ccc;margin-top:10px;line-height:1.6">Premium bags for modern Pakistani women. Elegance in every stitch.</p><p style="margin-top:12px">📱 WhatsApp: 03350854912<br>📧 hello@boganza.pk</p></div><div><b>Quick Links</b><a onclick="goHome()">Home</a><a onclick="filterCat('All',null)">All Bags</a><a onclick="trackOrder()">Track Order</a><a onclick="showPolicy()">Exchange Policy</a></div><div><b>Categories</b><a onclick="filterCat('Tote',null)">Tote Bags</a><a onclick="filterCat('Crossbody',null)">Crossbody</a><a onclick="filterCat('Handbag',null)">Handbags</a><a onclick="filterCat('Clutch',null)">Clutches</a></div></footer>
 <div id="blogsPage" style="display:none;padding:30px 16px;max-width:700px;margin:auto">
 <button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer">← Back to Shop</button>
 <h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-top:15px">BOGANZA Blogs 📝</h2>
@@ -236,8 +220,8 @@ input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd
 </div>
 <button class="bigBtn" style="margin-top:20px" onclick="goHome()">Shop Now →</button>
 </div>
-<div id="trackPage" style="display:none;padding:30px 16px;max-width:600px;margin:auto;text-align:center"><button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;float:left">← Back</button><br><br><h1 style="font-size:50px">📦</h1><h2 style="font-family:'Playfair Display',serif;font-size:30px">Track Your Order</h2><p style="color:#666;margin:10px 0">Apna Order ID likhen jo aapko order ke baad mila tha</p><input id="trackInput" placeholder="Misal: BG-1985" style="text-align:center;font-size:18px;font-weight:700;text-transform:uppercase"><button class="bigBtn" onclick="doTrack()">Track Order →</button><div id="trackResult" style="margin-top:20px"></div><p style="margin-top:15px;font-size:13px;color:#888">Order ID nahi mil raha? WhatsApp karein: <b id="trackWaDisplay">03350854912</b></p></div>
-<div id="policyPage" style="display:none;padding:30px 16px;max-width:700px;margin:auto"><button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer">← Back to Shop</button><h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-top:15px">↩ Exchange & Return Policy</h2><p style="color:#666;margin:8px 0">Hum chahte hain aap apni shopping se 100% khush hon.</p><div style="background:#fff;padding:20px;border-radius:16px;margin-top:15px;line-height:2"><b>✔ 7-Day Easy Exchange</b><br>Delivery ke 7 din ke andar aap bag exchange kar sakte hain.<br><br><b>✔ Shart Kya Hai?</b><br>1. Bag bilkul naya ho, use na hua ho<br>2. Tag aur packing saath ho<br>3. Bag ko koi nuksan na pahuncha ho<br><br><b>✔ Exchange Kaise Hoga?</b><br>1. WhatsApp pe humein message karein: <b id="policyWaDisplay">03350854912</b><br>2. Apna Order ID aur bag ki photo bhejein<br>3. Hum aapko naya bag bhej denge<br><br><b>✔ Delivery Charges</b><br>Exchange ke liye delivery charges customer dega.<br><br><b>✔ Kya Return Hota Hai?</b><br>Agar bag me koi manufacturing fault ho to full return / refund hoga.</div><button class="bigBtn" style="margin-top:15px" onclick="openWaSupport('Hello BOGANZA! Mujhe Exchange karna hai')">Exchange Ke Liye WhatsApp Karein 📱</button></div>
+<div id="trackPage" style="display:none;padding:30px 16px;max-width:600px;margin:auto;text-align:center"><button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;float:left">← Back</button><br><br><h1 style="font-size:50px">📦</h1><h2 style="font-family:'Playfair Display',serif;font-size:30px">Track Your Order</h2><p style="color:#666;margin:10px 0">Apna Order ID likhen jo aapko order ke baad mila tha</p><input id="trackInput" placeholder="Misal: BG-1985" style="text-align:center;font-size:18px;font-weight:700;text-transform:uppercase"><button class="bigBtn" onclick="doTrack()">Track Order →</button><div id="trackResult" style="margin-top:20px"></div><p style="margin-top:15px;font-size:13px;color:#888">Order ID nahi mil raha? WhatsApp karein: <b>03350854912</b></p></div>
+<div id="policyPage" style="display:none;padding:30px 16px;max-width:700px;margin:auto"><button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer">← Back to Shop</button><h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-top:15px">↩ Exchange & Return Policy</h2><p style="color:#666;margin:8px 0">Hum chahte hain aap apni shopping se 100% khush hon.</p><div style="background:#fff;padding:20px;border-radius:16px;margin-top:15px;line-height:2"><b>✔ 7-Day Easy Exchange</b><br>Delivery ke 7 din ke andar aap bag exchange kar sakte hain.<br><br><b>✔ Shart Kya Hai?</b><br>1. Bag bilkul naya ho, use na hua ho<br>2. Tag aur packing saath ho<br>3. Bag ko koi nuksan na pahuncha ho<br><br><b>✔ Exchange Kaise Hoga?</b><br>1. WhatsApp pe humein message karein: <b>03350854912</b><br>2. Apna Order ID aur bag ki photo bhejein<br>3. Hum aapko naya bag bhej denge<br><br><b>✔ Delivery Charges</b><br>Exchange ke liye delivery charges customer dega.<br><br><b>✔ Kya Return Hota Hai?</b><br>Agar bag me koi manufacturing fault ho to full return / refund hoga.</div><button class="bigBtn" style="margin-top:15px" onclick="window.open('https://wa.me/923350854912?text=Hello BOGANZA! Mujhe Exchange karna hai','_blank')">Exchange Ke Liye WhatsApp Karein 📱</button></div>
 <div id="cartPage">
 <div class="drawer-top"><h2>Your cart</h2><span style="cursor:pointer;font-size:22px" onclick="toggleCart(false)">✕</span></div>
 <div style="text-align:right;margin-top:4px"><span class="continue-shop" onclick="toggleCart(false);goHome()">Continue shopping</span></div>
@@ -252,7 +236,6 @@ input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd
 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div class="checkout-logo">B<span>.</span></div><button class="bag-head" onclick="closeCheckout();toggleCart(true)">🛍️<span id="checkoutBagCount">0</span></button><span style="cursor:pointer;font-size:22px" onclick="closeCheckout()">✕</span></div>
 <div class="order-summary-head" onclick="toggleSummary()"><span>Order summary ∨</span><b id="checkoutTotalTop">Rs. 0</b></div>
 <div id="summary"></div>
-<div id="checkoutShopInfo" style="background:#fdfbf7;border:1px solid #eee;padding:12px;border-radius:12px;font-size:13px;line-height:1.7;margin:10px 0"></div>
 <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin:18px 0 8px">Contact <span style="float:right;font-size:13px;font-family:'Inter';font-weight:400;color:#666;cursor:pointer" onclick="openProfile()">Sign in</span></h3>
 <input id="cEmail" placeholder="Email">
 <input id="cPhone" placeholder="Phone / WhatsApp Number *" oninput="saveInfo()">
@@ -265,11 +248,10 @@ input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd
 <input id="cArea" placeholder="Area *" oninput="saveInfo()">
 <textarea id="cAddress" placeholder="Complete Address *" oninput="saveInfo()"></textarea>
 <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin:18px 0 8px">Shipping method</h3>
-<div class="ship-box active" id="shipStandard" onclick="selectShip(shipCost,this)"><span><b>Standard</b><br><small style="color:#888">3-5 working days</small></span><b id="checkoutShipFee">Rs 249.00</b></div>
+<div class="ship-box active" id="shipStandard" onclick="selectShip(249,this)"><span><b>Standard</b><br><small style="color:#888">3-5 working days</small></span><b>Rs 249.00</b></div>
 <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin:18px 0 8px">Payment</h3>
 <p style="font-size:12px;color:#888;margin-bottom:8px">All transactions are secure and encrypted.</p>
-<div id="checkoutPaymentOptions"></div>
-<div id="checkoutBankInfo" style="display:none;background:#f8f8f8;padding:12px;border-radius:12px;font-size:13px;line-height:1.6;margin:6px 0;white-space:pre-line"></div>
+<div class="pay active" onclick="selectPay(this,'Cash on Delivery')"><span><b>Cash on Delivery (COD)</b><div style="font-size:12px;color:#666">Pay on delivery</div></span><span class="tick">✓</span></div>
 <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin:18px 0 8px">Billing address</h3>
 <div class="pay active" onclick="selectBilling('same',this)"><span>Same as shipping address</span><span class="tick">✓</span></div>
 <div class="pay" onclick="selectBilling('different',this)"><span>Use a different billing address</span><span class="tick"></span></div>
@@ -282,139 +264,69 @@ input,textarea,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd
 <button onclick="closeCheckout()" style="width:100%;margin-top:10px;padding:12px;border:none;background:#eee;border-radius:12px;cursor:pointer">← Back to Shop</button>
 </div>
 <div id="successPage" style="text-align:center;padding:40px 16px"><h1 style="font-size:50px">🎉</h1><h2>Thank You! Order Placed</h2><p id="orderInfo" style="margin:15px;line-height:1.8"></p><button class="bigBtn" onclick="location.reload()">Continue Shopping</button></div>
-
-<!-- ADMIN PANEL -->
-<div id="adminPage">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-<h2 style="font-family:'Playfair Display',serif;font-size:28px">Admin Panel</h2>
-<button onclick="goHome()" style="padding:9px 16px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;font-weight:600">← Back to Website</button>
-</div>
-
-<div class="admin-tabs">
-<button class="admin-tab active" onclick="switchAdminTab('prod',this)">Product Panel</button>
-<button class="admin-tab" onclick="switchAdminTab('ord',this)">Order Panel</button>
-<button class="admin-tab" onclick="switchAdminTab('set',this)">Order Details / Settings Panel</button>
-<button class="admin-tab" onclick="switchAdminTab('hero',this)">Hero Panel</button>
-<button class="admin-tab" onclick="switchAdminTab('foot',this)">Footer Panel</button>
-</div>
-
-<!-- 1. PRODUCT PANEL -->
-<div id="adminSec_prod" class="admin-sec active">
-<h3 id="prodFormTitle">Add New Product</h3>
-<input type="hidden" id="editProdIdx" value="-1">
-<label class="admin-label">Product Name *</label>
-<input id="apName" placeholder="Product Name">
-<label class="admin-label">Price (Rs) *</label>
-<input id="apPrice" type="number" placeholder="Price">
-<label class="admin-label">Old Price (Rs)</label>
-<input id="apOld" type="number" placeholder="Old Price">
-<label class="admin-label">Colors (comma separated, e.g. Black, Brown, Beige)</label>
-<input id="apColors" placeholder="Black, Brown, Beige">
-<label class="admin-label">Category *</label>
-<select id="apCat">
-<option value="Tote">Tote</option>
-<option value="Crossbody">Crossbody</option>
-<option value="Handbag">Handbag</option>
-<option value="Clutch">Clutch</option>
-</select>
-<label class="admin-label">Brand Name</label>
-<input id="apBrand" placeholder="Brand Name (e.g. BOGANZA.PK)">
-<label class="admin-label">Description</label>
-<textarea id="apDesc" placeholder="Product Description"></textarea>
-<label class="admin-label">Stock</label>
-<input id="apStock" type="number" placeholder="Available Stock Quantity">
-<label class="admin-label">Upload up to 5 Product Pictures directly from Gallery</label>
-<input type="file" id="apGalleryInput" accept="image/*" multiple onchange="handleProductGallery(this)">
-<div class="gallery-preview" id="apGalleryPreview"></div>
-<div style="display:flex;gap:10px;margin-top:12px">
-<button class="bigBtn" onclick="saveAdminProduct()">Save Product</button>
-<button id="cancelEditBtn" style="display:none;padding:15px 20px;border:1px solid #ddd;background:#fff;border-radius:999px;font-weight:700;cursor:pointer" onclick="resetProductForm()">Cancel</button>
-</div>
-
-<h3 style="margin-top:28px">All Products</h3>
-<div id="adminProductList"></div>
-</div>
-
-<!-- 2. ORDER PANEL -->
-<div id="adminSec_ord" class="admin-sec">
-<h3>Customer Orders</h3>
-<div id="adminOrdersList"></div>
-</div>
-
-<!-- 3. ORDER DETAILS / SETTINGS PANEL -->
-<div id="adminSec_set" class="admin-sec">
-<h3>Order Details / Settings</h3>
-<label class="admin-label">My Phone Number</label>
-<input id="asPhone" placeholder="My Phone Number">
-<label class="admin-label">My WhatsApp Number</label>
-<input id="asWhatsapp" placeholder="My WhatsApp Number (e.g. 03350854912)">
-<label class="admin-label">My Email</label>
-<input id="asEmail" placeholder="My Email">
-<label class="admin-label">My Shop Address</label>
-<textarea id="asAddress" placeholder="My Shop Address"></textarea>
-<label class="admin-label">Delivery Charges (Rs)</label>
-<input id="asDelivery" type="number" placeholder="Delivery Charges">
-<label class="admin-label">Payment Details</label>
-<label style="display:flex;align-items:center;gap:8px;margin:8px 0;font-size:14px">
-<input type="checkbox" id="asCodEnabled" style="width:18px;height:18px"> Enable Cash on Delivery (COD)
-</label>
-<label class="admin-label">Bank Details (Account Title, Bank Name, Account Number / IBAN)</label>
-<textarea id="asBankDetails" placeholder="Enter Bank Details to show on website checkout (leave empty if none)"></textarea>
-<button class="bigBtn" style="margin-top:12px" onclick="saveOrderSettings()">Save Settings</button>
-</div>
-
-<!-- 4. HERO PANEL -->
-<div id="adminSec_hero" class="admin-sec">
-<h3>Hero Section Control</h3>
-<label class="admin-label">Hero Title</label>
-<input id="ahTitle" placeholder="Hero Title">
-<label class="admin-label">Hero Subtitle</label>
-<textarea id="ahSubtitle" placeholder="Hero Subtitle"></textarea>
-<label class="admin-label">Button Text</label>
-<input id="ahBtnText" placeholder="Button Text">
-<label class="admin-label">Button Link</label>
-<input id="ahBtnLink" placeholder="Button Link (e.g. #shop or https://...)">
-<label class="admin-label">Upload / Change Hero Image (Gallery)</label>
-<input type="file" accept="image/*" onchange="handleHeroImage(this)">
-<div id="ahImgPreview" style="margin:10px 0"></div>
-<label style="display:flex;align-items:center;gap:8px;margin:12px 0;font-size:14px;font-weight:700">
-<input type="checkbox" id="ahShow" style="width:18px;height:18px"> Show Hero Section
-</label>
-<button class="bigBtn" style="margin-top:10px" onclick="saveHeroSettings()">Save Hero Settings</button>
-</div>
-
-<!-- 5. FOOTER PANEL -->
-<div id="adminSec_foot" class="admin-sec">
-<h3>Footer Control</h3>
-<label class="admin-label">About Text</label>
-<textarea id="afAbout" placeholder="About Text"></textarea>
-<label class="admin-label">Phone</label>
-<input id="afPhone" placeholder="Phone">
-<label class="admin-label">WhatsApp</label>
-<input id="afWhatsapp" placeholder="WhatsApp">
-<label class="admin-label">Email</label>
-<input id="afEmail" placeholder="Email">
-<label class="admin-label">Address</label>
-<textarea id="afAddress" placeholder="Address"></textarea>
-<label class="admin-label">Facebook Link</label>
-<input id="afFacebook" placeholder="Facebook Link">
-<label class="admin-label">Instagram Link</label>
-<input id="afInstagram" placeholder="Instagram Link">
-<label class="admin-label">TikTok Link</label>
-<input id="afTiktok" placeholder="TikTok Link">
-<label class="admin-label">Copyright Text</label>
-<input id="afCopyright" placeholder="Copyright Text">
-<button class="bigBtn" style="margin-top:12px" onclick="saveFooterSettings()">Save Footer Settings</button>
-</div>
-</div>
-
-<button class="waFloat" onclick="openWaSupport('Hello BOGANZA!')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+<button class="waFloat" onclick="window.open('https://wa.me/923350854912?text=Hello BOGANZA!','_blank')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
 <script>
 let products=[
-{name:"The Everyday Tote",cat:"Tote",brand:"BOGANZA.PK",stock:15,price:3499,old:4999,desc:"Spacious daily tote with premium leather finish. Fits laptop, wallet & makeup. Perfect for office & university. Soft interior, strong handles, premium zip.",colors:["Black","Brown","Beige","Maroon"],imgs:["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800"]},
-{name:"Mini Crossbody",cat:"Crossbody",brand:"BOGANZA.PK",stock:20,price:2499,old:3299,desc:"Compact & stylish crossbody. Hands-free comfort with adjustable strap. Best for daily outings, shopping & casual look.",colors:["Black","Pink","White","Brown"],imgs:["https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
-{name:"Chic Shoulder Bag",cat:"Handbag",brand:"BOGANZA.PK",stock:12,price:2999,old:3999,desc:"Elegant shoulder bag with gold chain. Premium stitching, soft interior, perfect for parties & dinners.",colors:["Black","Golden","White"],imgs:["https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800"]},
-{name:"Luxury Handbag",cat:"Handbag",brand:"BOGANZA.PK",stock:10,price:4499,old:5999,desc:"Our most loved luxury handbag. Premium imported material, luxury feel, gift box included. Best for weddings & formal events.",colors:["Black","Brown","Beige"],imgs:["https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
-{name:"Casual Backpack",cat:"Tote",brand:"BOGANZA.PK",stock:18,price:3999,old:4999,desc:"Stylish backpack for girls. Water-resistant, multiple pockets, comfortable straps. Best for university & travel.",colors:["Black","Grey","Pink"],imgs:["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
-{name:"Evening Clutch",cat:"Clutch",brand:"BOGANZA.PK",stock:25,price:1999,old:2799,desc:"Beautiful evening clutch for weddings & dinners. Shiny finish, premium look, chain strap included.",colors:["Golden","Silver","Black"],imgs:["https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
-{name:"Office Satchel",cat:"Handbag",brand:"BOGANZA.PK",stock:14,price:3799,old:4799,desc:"Professional satchel for working women. Laptop compartment, premium leather, classy look.",colors:["Black","Brown"],imgs:["
+{name:"The Everyday Tote",cat:"Tote",price:3499,old:4999,desc:"Spacious daily tote with premium leather finish. Fits laptop, wallet & makeup. Perfect for office & university. Soft interior, strong handles, premium zip.",colors:["Black","Brown","Beige","Maroon"],imgs:["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800"]},
+{name:"Mini Crossbody",cat:"Crossbody",price:2499,old:3299,desc:"Compact & stylish crossbody. Hands-free comfort with adjustable strap. Best for daily outings, shopping & casual look.",colors:["Black","Pink","White","Brown"],imgs:["https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
+{name:"Chic Shoulder Bag",cat:"Handbag",price:2999,old:3999,desc:"Elegant shoulder bag with gold chain. Premium stitching, soft interior, perfect for parties & dinners.",colors:["Black","Golden","White"],imgs:["https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800"]},
+{name:"Luxury Handbag",cat:"Handbag",price:4499,old:5999,desc:"Our most loved luxury handbag. Premium imported material, luxury feel, gift box included. Best for weddings & formal events.",colors:["Black","Brown","Beige"],imgs:["https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
+{name:"Casual Backpack",cat:"Tote",price:3999,old:4999,desc:"Stylish backpack for girls. Water-resistant, multiple pockets, comfortable straps. Best for university & travel.",colors:["Black","Grey","Pink"],imgs:["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
+{name:"Evening Clutch",cat:"Clutch",price:1999,old:2799,desc:"Beautiful evening clutch for weddings & dinners. Shiny finish, premium look, chain strap included.",colors:["Golden","Silver","Black"],imgs:["https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
+{name:"Office Satchel",cat:"Handbag",price:3799,old:4799,desc:"Professional satchel for working women. Laptop compartment, premium leather, classy look.",colors:["Black","Brown"],imgs:["https://images.unsplash.com/photo-1590739225287-bd31519780c3?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
+{name:"Travel Duffel",cat:"Tote",price:4999,old:6499,desc:"Large travel bag, cabin size. Durable zips, spacious, best for travel & gym.",colors:["Black","Navy","Grey"],imgs:["https://images.unsplash.com/photo-1546938576-6e6a4b317be2?w=800","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800"]},
+];
+try{let sp=JSON.parse(localStorage.getItem('boganza_products')||"null"); if(sp && sp.length>0){products=sp;}}catch(e){}
+let curCat='All', cart=[], payment='Cash on Delivery', total=0, currentProduct=0, detailQty=1, selectedColor='Black', currentImgIdx=0, shipCost=249, discount=0;
+const SHOP_WHATSAPP='923350854912';
+function openMenu(){document.getElementById('menuDrawer').classList.add('open');document.getElementById('menuOverlay').classList.add('show')}
+function closeMenu(){document.getElementById('menuDrawer').classList.remove('open');document.getElementById('menuOverlay').classList.remove('show')}
+function openProfile(){document.getElementById('profilePanel').classList.add('open');document.getElementById('profileOverlay').classList.add('show')}
+function closeProfile(){document.getElementById('profilePanel').classList.remove('open');document.getElementById('profileOverlay').classList.remove('show')}
+function openSearchPanel(){document.getElementById('searchPanel').classList.add('open');document.getElementById('searchOverlay').classList.add('show');renderSearchPanel()}
+function closeSearchPanel(){document.getElementById('searchPanel').classList.remove('open');document.getElementById('searchOverlay').classList.remove('show')}
+function renderSearchPanel(){let q=(document.getElementById('searchPanelInput').value||'').toLowerCase();let box=document.getElementById('searchResults');box.innerHTML='';products.filter(p=>!q||p.name.toLowerCase().includes(q)).forEach((p,i)=>{box.innerHTML+=`<div class="search-item" onclick="closeSearchPanel();openProduct(${products.indexOf(p)})"><img src="${p.imgs[0]}"><div><b>${p.name}</b><div style="color:#888;font-size:13px">Rs. ${p.price}</div></div></div>`})}
+function toggleSummary(){let s=document.getElementById('summary');s.style.display=s.style.display==='none'?'block':'none'}
+function hideSearch(){let s=document.getElementById('searchPill'); if(s) s.style.display='none'}
+function showSearch(){let s=document.getElementById('searchPill'); if(s) s.style.display='none'}
+function showFooter(){let f=document.getElementById('mainFooter'); if(f) f.style.display='grid'}
+function hideFooter(){let f=document.getElementById('mainFooter'); if(f) f.style.display='none'}
+function goHome(){['productPage','cartPage','successPage','trackPage','policyPage','blogsPage'].forEach(id=>document.getElementById(id).style.display='none');closeCheckout();document.getElementById('mainPage').style.display='block';showFooter();window.scrollTo(0,0)}
+function filterCat(c,btn){curCat=c;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');goHome();render();if(btn){btn.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}document.getElementById('shop').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function toggleHeart(el,event){event.stopPropagation();el.classList.toggle('active');el.innerText=el.classList.contains('active')?'❤️':'♡'}
+function render(){let q=(document.getElementById('searchInput')?.value||'').toLowerCase();let grid=document.getElementById('grid');grid.innerHTML='';products.forEach((p,i)=>{if(curCat!=='All' && curCat!=='Sale' && p.cat!==curCat) return;if(curCat==='Sale' && p.price>3500) return;if(q && !p.name.toLowerCase().includes(q)) return;grid.innerHTML+=`<div class="card"><div class="card-img-wrap"><button class="heart" onclick="toggleHeart(this,event)">♡</button><img src="${p.imgs[0]}" onclick="openProduct(${i})"></div><div class="card-body"><div class="brand-label">BOGANZA.PK</div><span class="badge">-30% SALE</span><h3>${p.name}</h3><div class="stars">★★★★★ 5.0 (212)</div><div class="price">Rs. ${p.price} <s>Rs. ${p.old}</s></div><div class="card-btns"><button class="add" onclick="event.stopPropagation();addToCart(${i},1)">Add to Cart</button><button class="buy" onclick="event.stopPropagation();addToCart(${i},1);toggleCart(false);openCheckout()">Buy Now</button></div><button class="viewBtn" onclick="openProduct(${i})">View Details →</button></div></div>`})}
+function openProduct(i){hideSearch();currentProduct=i;detailQty=1;currentImgIdx=0;document.getElementById('detailQty').innerText='1';let p=products[i];selectedColor=p.colors[0];['mainPage','cartPage','trackPage','policyPage','blogsPage'].forEach(id=>document.getElementById(id).style.display='none');closeCheckout();document.getElementById('productPage').style.display='block';showFooter();document.getElementById('pName').innerText=p.name;document.getElementById('pPrice').innerText='Rs. '+p.price;document.getElementById('pOld').innerText='Rs. '+p.old;document.getElementById('pSave').innerText='Sale Save Rs. '+(p.old-p.price);document.getElementById('pDesc').innerText=p.desc;document.getElementById('colorName').innerText=selectedColor;document.getElementById('mainImg').src=p.imgs[0];document.getElementById('photoCounter').innerText='1 / '+p.imgs.length;let thumbs=document.getElementById('thumbs');thumbs.innerHTML='';p.imgs.forEach((img,idx)=>{thumbs.innerHTML+=`<img src="${img}" class="${idx==0?'active':''}" onclick="changeImg('${img}',this,${idx})">`});let cb=document.getElementById('colorBox');cb.innerHTML='';p.colors.forEach((c,idx)=>{cb.innerHTML+=`<button class="color-pill ${idx==0?'active':''}" onclick="selectColor('${c}',this)">${c.toLowerCase()}</button>`});let rel=document.getElementById('relatedGrid');rel.innerHTML='';let others=products.map((pp,idx)=>({pp,idx})).filter(x=>x.idx!==i).sort((a,b)=>(b.pp.cat===p.cat)-(a.pp.cat===p.cat));others.slice(0,4).forEach(x=>{rel.innerHTML+=`<div class="card"><div class="card-img-wrap"><button class="heart" onclick="toggleHeart(this,event)">♡</button><img src="${x.pp.imgs[0]}" onclick="openProduct(${x.idx})"></div><div class="card-body"><div class="brand-label">BOGANZA.PK</div><h3>${x.pp.name}</h3><div class="stars">★★★★★ 5.0 (212)</div><div class="price">Rs. ${x.pp.price} <s>Rs. ${x.pp.old}</s></div><div class="card-btns"><button class="add" onclick="event.stopPropagation();addToCart(${x.idx},1)">Add to Cart</button><button class="buy" onclick="event.stopPropagation();addToCart(${x.idx},1);toggleCart(false);openCheckout()">Buy Now</button></div></div></div>`});window.scrollTo(0,0)}
+function updateCounter(){let p=products[currentProduct];document.getElementById('photoCounter').innerText=(currentImgIdx+1)+' / '+p.imgs.length}
+function changeImg(src,el,idx){document.getElementById('mainImg').src=src;document.querySelectorAll('.thumbs img').forEach(x=>x.classList.remove('active'));el.classList.add('active');if(idx!==undefined)currentImgIdx=idx;updateCounter()}
+function prevImg(){let p=products[currentProduct];currentImgIdx=(currentImgIdx-1+p.imgs.length)%p.imgs.length;document.getElementById('mainImg').src=p.imgs[currentImgIdx];document.querySelectorAll('.thumbs img').forEach((x,ix)=>x.classList.toggle('active',ix===currentImgIdx));updateCounter()}
+function nextImg(){let p=products[currentProduct];currentImgIdx=(currentImgIdx+1)%p.imgs.length;document.getElementById('mainImg').src=p.imgs[currentImgIdx];document.querySelectorAll('.thumbs img').forEach((x,ix)=>x.classList.toggle('active',ix===currentImgIdx));updateCounter()}
+function selectColor(c,el){selectedColor=c;document.getElementById('colorName').innerText=c;document.querySelectorAll('.color-pill').forEach(x=>x.classList.remove('active'));el.classList.add('active')}
+function changeDetailQty(d){detailQty+=d;if(detailQty<1)detailQty=1;if(detailQty>10)detailQty=10;document.getElementById('detailQty').innerText=detailQty}
+function addToCart(i,qty){let f=cart.find(x=>x.i===i);if(f)f.qty+=qty;else cart.push({i,qty,color:selectedColor});updateCart();toggleCart(true)}
+function addFromDetail(){addToCart(currentProduct,detailQty)}
+function buyNow(){addToCart(currentProduct,detailQty);toggleCart(false);openCheckout()}
+function updateCart(){let el=document.getElementById('cartItems');el.innerHTML='';total=0;cart.forEach((c,idx)=>{let p=products[c.i];total+=p.price*c.qty;el.innerHTML+=`<div class="cItem"><img src="${p.imgs[0]}"><div class="cItem-info"><b>${p.name}</b><div class="cPrice">Rs. ${p.price}</div><div class="cColor">Color: ${c.color||selectedColor}</div><div class="qty-pill"><button onclick="chg(${idx},-1)">-</button><span>${c.qty}</span><button onclick="chg(${idx},1)">+</button></div><button class="trash-btn" onclick="rem(${idx})"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></button></div><div class="cItem-right"><b>Rs. ${p.price*c.qty}</b></div></div>`});let count=cart.reduce((a,b)=>a+b.qty,0);document.getElementById('cartCount').innerText=count;document.getElementById('checkoutBagCount').innerText=count;document.getElementById('cartTotal').innerText='Rs. '+total+' PKR';updateCheckoutTotal()}
+function chg(idx,d){cart[idx].qty+=d;if(cart[idx].qty<=0)cart.splice(idx,1);updateCart()}
+function rem(idx){cart.splice(idx,1);updateCart()}
+function toggleCart(o){if(o===true){['mainPage','productPage','trackPage','policyPage','successPage','blogsPage'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('cartPage').style.display='block';hideFooter();window.scrollTo(0,0)}else if(o===false){document.getElementById('cartPage').style.display='none';document.getElementById('mainPage').style.display='block';showFooter()}}
+function selectShip(cost,el){shipCost=cost;document.querySelectorAll('.ship-box').forEach(b=>b.classList.remove('active'));el.classList.add('active');updateCheckoutTotal()}
+function selectBilling(type,el){document.querySelectorAll('#checkoutDrawer .pay').forEach(b=>{if(b.textContent.includes('Same as')||b.textContent.includes('different')){b.classList.remove('active');b.querySelector('.tick').innerText=''}});el.classList.add('active');el.querySelector('.tick').innerText='✓';document.getElementById('billingExtra').style.display=type==='different'?'block':'none'}
+function applyDiscount(){let v=document.getElementById('discountCode').value.trim().toUpperCase();if(v==='BOGANZA10'||v==='WELCOME10'){discount=500;document.getElementById('discountMsg').innerText='✅ Discount Rs 500 applied!';}else if(v===''){discount=0;document.getElementById('discountMsg').innerText='';}else{discount=0;document.getElementById('discountMsg').innerText='❌ Invalid code. Try BOGANZA10';}updateCheckoutTotal()}
+function updateCheckoutTotal(){let final=total+ (cart.length?shipCost:0) - discount;if(final<0)final=0;document.getElementById('checkoutTotalTop').innerText='Rs. '+final;document.getElementById('checkoutFinalTotal').innerText='PKR Rs '+final.toLocaleString()+'.00';document.getElementById('totalItems').innerText=cart.reduce((a,b)=>a+b.qty,0)+' items';if(cart.length){document.getElementById('totalImg').src=products[cart[0].i].imgs[0];}}
+function saveInfo(){if(!document.getElementById('saveInfoCheck').checked)return;localStorage.setItem('boganza_info',JSON.stringify({name:document.getElementById('cName').value,phone:document.getElementById('cPhone').value,email:document.getElementById('cEmail').value,address:document.getElementById('cAddress').value,city:document.getElementById('cCity').value,area:document.getElementById('cArea').value}))}
+function loadInfo(){try{let s=JSON.parse(localStorage.getItem('boganza_info')||'{}');if(s.name)document.getElementById('cName').value=s.name;if(s.phone)document.getElementById('cPhone').value=s.phone;if(s.email)document.getElementById('cEmail').value=s.email;if(s.address)document.getElementById('cAddress').value=s.address;if(s.city)document.getElementById('cCity').value=s.city;if(s.area)document.getElementById('cArea').value=s.area;}catch(e){}}
+function openCheckout(){if(!cart.length){alert('Cart empty hai!');return}hideSearch();loadInfo();document.getElementById('checkoutDrawer').classList.add('open');document.getElementById('checkoutOverlay').classList.add('show');updateCheckoutTotal();let s=document.getElementById('summary');s.innerHTML='';cart.forEach(c=>{let p=products[c.i];s.innerHTML+=`<div class="summary-row"><img src="${p.imgs[0]}"><div><div class="sName">${p.name}</div><div class="sMeta">Qty: ${c.qty} | Color: ${c.color||selectedColor}</div></div><b style="margin-left:auto">Rs. ${p.price*c.qty}</b></div>`});s.innerHTML+=`<div style="display:flex;justify-content:space-between;margin-top:8px"><span>Shipping (Standard)</span><b>Rs. ${shipCost}</b></div><div style="display:flex;justify-content:space-between;margin-top:4px"><span>Discount</span><b>- Rs. ${discount}</b></div><hr style="margin:12px 0"><div style="display:flex;justify-content:space-between"><span>Total</span><b>Rs. ${total+shipCost-discount}</b></div>`}
+function closeCheckout(){document.getElementById('checkoutDrawer').classList.remove('open');document.getElementById('checkoutOverlay').classList.remove('show')}
+function backShop(){closeCheckout();document.getElementById('cartPage').style.display='none';document.getElementById('mainPage').style.display='block';showFooter()}
+function selectPay(el,m){payment=m;document.querySelectorAll('#checkoutDrawer .pay').forEach(x=>{if(x.textContent.includes('Cash on Delivery')){x.classList.remove('active')}});el.classList.add('active')}
+function showBlogs(){hideSearch();['mainPage','productPage','cartPage','successPage','trackPage','policyPage'].forEach(id=>document.getElementById(id).style.display='none');let b=document.getElementById('blogsPage'); if(b) b.style.display='block';hideFooter();window.scrollTo(0,0)}
+function trackOrder(){hideSearch();['mainPage','productPage','cartPage','successPage','policyPage','blogsPage'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('trackPage').style.display='block';hideFooter();document.getElementById('trackResult').innerHTML='';window.scrollTo(0,0)}
+function doTrack(){let id=document.getElementById('trackInput').value.trim();if(!id){alert('Please Order ID likhen!');return}let orders=JSON.parse(localStorage.getItem('boganza_orders')||"[]");let o=orders.find(x=>x.id.toLowerCase()===id.toLowerCase());let r=document.getElementById('trackResult');if(o){r.innerHTML=`<div style="background:#fff;padding:20px;border-radius:16px;text-align:left;line-height:2;box-shadow:0 4px 15px rgba(0,0,0,.06)"><b style="font-size:18px">✅ Order Mil Gaya!</b><br><b>Order ID:</b> ${o.id}<br><b>Name:</b> ${o.name}<br><b>Items:</b> ${o.items}<br><b>Total:</b> <b>Rs. ${o.total}</b><br><b>Payment:</b> ${o.payment}<br><b>Status:</b> <span style="background:#ffe9c2;padding:4px 10px;border-radius:20px">${o.status}</span><br><b>Date:</b> ${o.date}</div>`}else{r.innerHTML=`<div style="background:#fff3f3;padding:20px;border-radius:16px">❌ <b>Ye Order ID nahi mila.</b><br><span style="font-size:14px;color:#666">ID dobara check karein.</span></div>`}}
+function showPolicy(){hideSearch();['mainPage','productPage','cartPage','successPage','trackPage','blogsPage'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('policyPage').style.display='block';hideFooter();window.scrollTo(0,0)}
+function placeOrder(){let n=document.getElementById('cName').value,ph=document.getElementById('cPhone').value,ct=document.getElementById('cCity').value,ad=document.getElementById('cAddress').value;if(!n||!ph||!ct||!ad){alert('Please fill all details!');return}let id='BG-'+Math.floor(1000+Math.random()*9000);let finalTotal=total+shipCost-discount;let itemsText=cart.map(c=>products[c.i].name+" x "+c.qty).join(", ");let itemsForWA=cart.map(c=>products[c.i].name+" x "+c.qty+" - Rs. "+(products[c.i].price*c.qty)).join("%0A");try{let orders=JSON.parse(localStorage.getItem('boganza_orders')||"[]");orders.push({name:n,phone:ph,city:ct,address:ad,items:itemsText,total:finalTotal,payment:payment,date:new Date().toLocaleString(),status:'New',id:id});localStorage.setItem('boganza_orders',JSON.stringify(orders))}catch(e){}let waMsg=`NEW ORDER - BOGANZA%0A%0AOrder ID: ${id}%0AName: ${n}%0APhone: ${ph}%0ACity: ${ct}%0AAddress: ${ad}%0APayment: ${payment}%0AShipping: Rs. ${shipCost}%0ADiscount: Rs. ${discount}%0A%0AItems:%0A${itemsForWA}%0A%0ATotal: Rs. ${finalTotal}`;window.open(`https://wa.me/${SHOP_WHATSAPP}?text=${waMsg}`,'_blank');cart=[];updateCart();['cName','cPhone','cCity','cAddress','cEmail'].forEach(x=>{let el=document.getElementById(x);if(el)el.value=''});closeCheckout();document.getElementById('cartPage').style.display='none';document.getElementById('successPage').style.display='block';hideFooter();document.getElementById('orderInfo').innerHTML=`Order ID: <b>${id}</b><br>Name: ${n}<br>Phone: ${ph}<br>City: ${ct}<br>Payment: ${payment}<br>Total: <b>Rs. ${finalTotal}</b><br>Hum aapko confirm karne ke liye call karenge.`}
+function orderWhatsApp(){let n=document.getElementById('cName')?.value||'';let ph=document.getElementById('cPhone')?.value||'';let ct=document.getElementById('cCity')?.value||'';let ad=document.getElementById('cAddress')?.value||'';let msg=`Hello BOGANZA! I want to order:%0A`+cart.map(c=>`${products[c.i].name} x ${c.qty} - Rs. ${products[c.i].price*c.qty}`).join('%0A')+`%0AShipping: Rs. ${shipCost}%0ADiscount: Rs. ${discount}%0ATotal: Rs. ${total+shipCost-discount}%0AName: ${n}%0APhone: ${ph}%0ACity: ${ct}%0AAddress: ${ad}`;window.open(`https://wa.me/${SHOP_WHATSAPP}?text=${msg}`,'_blank')}
+function orderWhatsAppSingle(){let p=products[currentProduct];let msg=`Hello BOGANZA! I want to order:%0A${p.name} - Color: ${selectedColor} - Qty: ${detailQty} - Rs. ${p.price*detailQty}`;window.open(`https://wa.me/${SHOP_WHATSAPP}?text=${msg}`,'_blank')}
+render();
+</script>
+</body>
+</html>
